@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Geocortex Viewer for HTML5</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+
+        <!-- IE specifics -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" type="text/css" href="Resources/Styles/IE.css" />
+        <![endif]-->
+
+        <link rel="stylesheet" href="Resources/Styles/Common.css" />
+        <link rel="stylesheet" href="Resources/Styles/Desktop.css" />
+        <link rel="stylesheet" href="Resources/Styles/Custom/Desktop.css" />
+        <link rel="stylesheet" href="Resources/Styles/Animations.css" />
+        <link rel="shortcut icon" href="favicon.ico" />
+
+        <script type="text/javascript"> // <![CDATA[
+            var uri = document.URL;
+            var ua = navigator.userAgent.toLowerCase();
+
+            var urlParams = null;
+            var redirectPage = null;
+
+            if (uri.indexOf("?") != -1) {
+                urlParams = uri.substring(uri.indexOf("?") + 1, uri.length);
+            }
+
+            var userAgentContains = function(token) {
+                return ua.indexOf(token.toLowerCase()) > - 1;
+            };
+
+            if ((userAgentContains("Android") && userAgentContains("mobile")) ||
+                (userAgentContains("iPhone") || userAgentContains("iPod"))) {
+                redirectPage = "Handheld.html";
+            }
+            else if (userAgentContains("Android") ||
+                     userAgentContains("iPad") ||
+                     userAgentContains("Playbook")) {
+                redirectPage = "Tablet.html";
+            }
+
+            if (redirectPage && urlParams) {
+                document.location = redirectPage + "?" + urlParams;
+            }
+            else if (redirectPage) {
+                document.location = redirectPage;
+            }
+            // ]]>
+        </script>
+
+        <script type="text/javascript" src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=3.1"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+        <script type="text/javascript" src="Resources/Scripts/jquery.ui.custom.js"></script>
+
+        <script type="text/javascript">
+
+            dojo.require("dojo.DeferredList");
+            dojo.require("dojo.i18n");
+            dojo.require("esri.toolbars.draw");
+
+
+            geocortex = {};
+
+            dojo.ready(function () {
+
+                var viewerConfig = {
+                    "configurations": {
+                        "default": "Resources/Config/Default/Desktop.json.js"
+                    },
+
+                    "viewerConfigUri": null
+                };
+
+                // Do we have a viewer specified?
+                var uri = document.URL;
+                var query = uri.substring(uri.indexOf("?") + 1, uri.length);
+                var urlParams = dojo.queryToObject(query);
+
+                viewerConfig["viewerConfigUri"] = urlParams["viewerConfigUri"];
+
+                // Grab the viewers configuration by viewer name.
+                var viewerName = urlParams["viewer"] || "default";
+
+                // If we don't have a viewerConfigUri param, use the viewerName param.
+                if (!viewerConfig["viewerConfigUri"]) {
+                    viewerConfig.viewerConfigUri = viewerConfig["configurations"][viewerName.toLocaleLowerCase()];
+                }
+
+                // Go.
+                var viewer = new geocortex.essentialsHtmlViewer.ViewerApplication(viewerConfig.viewerConfigUri);
+                viewer.id = "geocortex.essentialsHtmlViewer";
+                viewer.isOffline.set((urlParams["offline"] != null && urlParams["offline"] != "false"));
+                viewer.debugMode = (urlParams["debug"] != null && urlParams["debug"] != "false");
+                viewer.urlParameters = urlParams;
+                viewer.initialize();
+            });
+        </script>
+
+        <script src="Resources/Compiled/Essentials.js" type="text/javascript"></script>
+        <script src="Resources/Compiled/Framework.js" type="text/javascript"></script>
+        <script src="Resources/Compiled/Mapping.Infrastructure.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="shell-large" data-region-name="ApplicationRegion" data-region-adapter="geocortex.framework.ui.MultiDivRegionAdapter"></div>
+    </body>
+</html>

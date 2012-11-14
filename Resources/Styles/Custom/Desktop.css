@@ -1,0 +1,25 @@
+﻿/* Put custom desktop styling in this file. Put custom images in the Custom subfolder of the Images directory. */
+.banner
+{
+    background: url("../../Images/banner-background.png") repeat-x #1D86B7;
+    border-bottom: 1px solid #666666;
+}
+
+.banner-left-image
+{
+    background: url("../../Images/banner-logo.png") no-repeat;
+    width: 300px;
+}
+
+.banner-right-image
+{
+    width: 300px;
+}
+
+.banner-title,
+.banner-subtitle
+{
+    display: none;
+}
+
+/* END: Banner ---------------*/

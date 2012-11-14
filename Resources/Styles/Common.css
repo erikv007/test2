@@ -1,0 +1,587 @@
+﻿
+/* BEGIN: Global Application Defaults -----------------*/
+
+body,
+input,
+select,
+textarea
+{
+     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+body
+{
+    font-size: 0.8em;
+}
+
+button
+{
+    border: none;
+}
+
+input,
+select,
+textarea
+{
+    font-size: 1em;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+a,
+a:active,
+a:focus,
+a:hover,
+a:visited
+{
+    text-decoration: none;
+    outline: none;
+}
+
+.left
+{
+    float: left;
+}
+
+.right
+{
+    float: right;
+}
+
+.clear
+{
+    clear: both;
+}
+
+/* BEGIN: Global Application Defaults -----------------*/
+
+
+/* BEGIN: Shell Common  -----------------*/
+
+.shell-container
+{
+    height: 100%;
+}
+
+.module-container
+{
+    margin: 8px;
+}
+
+.unselectable
+{
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none; /* Introduced in IE 10. See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/ */
+   user-select: none; /* Introduced in IE 10. See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/ */
+}
+
+/* END: Shell Common  -----------------*/
+
+
+/* BEGIN: Activation / Visibility -----------------*/
+
+html body .bound-invisible
+{
+    display: none !important;
+}
+
+.view.active
+{
+    display: block;
+}
+
+.view.inactive
+{
+    display: none;
+}
+
+.view.activating
+{
+    display: block;
+    opacity: 0;
+}
+
+/* END: Activation / Visibility -----------------*/
+
+
+/* BEGIN: Authentication Dialog -----------------*/
+
+.authentication-dialog label
+{
+    display: block;
+}
+
+.authentication-dialog input
+{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+}
+
+/* END: Authentication Dialog -----------------*/
+
+
+/* BEGIN: Buttons ---------------*/
+
+.button
+{
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+
+.button,
+.button:hover,
+.button:visited
+{
+    color: #FFFFFF;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(26,131,236,1);
+}
+
+.button,
+.button:visited
+{
+    display: block;
+    cursor: pointer;
+    font-weight: bold;
+    padding: .4em .8em;
+    background: #666666;
+    background: linear-gradient(top, #999999 0%,#666666 100%); 
+    background: -moz-linear-gradient(top, #999999 0%, #666666 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#999999), color-stop(100%,#666666));  
+    background: -webkit-linear-gradient(top, #999999 0%,#666666 100%); 
+    background: -o-linear-gradient(top, #999999 0%,#666666 100%);
+    background: -ms-linear-gradient(top, #999999 0%,#666666 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#999999', endColorstr='#666666',GradientType=0 ); /* IE lte 9 */
+    border: 1px solid #666666;
+}
+
+.button:hover
+{
+    background: #777777;
+    background: linear-gradient(top, #AAAAAA 0%,#777777 100%);
+    background: -moz-linear-gradient(top, #AAAAAA 0%, #777777 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#AAAAAA), color-stop(100%,#777777)); 
+    background: -webkit-linear-gradient(top, #AAAAAA 0%,#777777 100%);
+    background: -o-linear-gradient(top, #AAAAAA 0%,#777777 100%);
+    background: -ms-linear-gradient(top, #AAAAAA 0%,#777777 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#AAAAAA', endColorstr='#777777',GradientType=0 ); /* IE lte 9 */
+    border: 1px solid #666666;
+}
+
+.button:active
+{
+    border: 1px solid #555555;
+    box-shadow: 1px 1px 1px #666666 inset;
+}
+
+.button.alt,
+.button.alt:hover,
+.button.alt:visited
+{
+    color: #333333;
+    text-decoration: none; 
+}
+
+.button.alt,
+.button.alt:visited
+{
+    color: #333333;
+    background: #CCCCCC; 
+    background: linear-gradient(top, #EEEEEE 0%,#CCCCCC 100%); 
+    background: -moz-linear-gradient(top, #EEEEEE 0%, #CCCCCC 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EEEEEE), color-stop(100%,#CCCCCC));  
+    background: -webkit-linear-gradient(top, #EEEEEE 0%,#CCCCCC 100%); 
+    background: -o-linear-gradient(top, #EEEEEE 0%,#CCCCCC 100%);
+    background: -ms-linear-gradient(top, #EEEEEE 0%,#CCCCCC 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EEEEEE', endColorstr='#CCCCCC',GradientType=0 ); /* IE lte 9 */
+    border: 1px solid #AAAAAA;
+}
+
+.button.alt:hover
+{
+    background: #EEEEEE; 
+    background: linear-gradient(top, #F7F7F7 0%,#DDDDDD 100%); 
+    background: -moz-linear-gradient(top, #F7F7F7 0%, #DDDDDD 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F7F7F7), color-stop(100%,#DDDDDD));   
+    background: -webkit-linear-gradient(top, #F7F7F7 0%,#DDDDDD 100%); 
+    background: -o-linear-gradient(top, #F7F7F7 0%,#DDDDDD 100%);
+    background: -ms-linear-gradient(top, #F7F7F7 0%,#DDDDDD 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F7F7F7', endColorstr='#DDDDDD',GradientType=0 ); /* IE lte 9 */
+    border: 1px solid #AAAAAA;
+}
+
+.button.alt:active
+{
+    border: 1px solid #999999;
+    box-shadow: 1px 1px 1px #CCCCCC inset;
+}
+
+/* END: Buttons ---------------*/
+
+
+/* BEGIN: Header Buttons ----------------- */
+
+.header-close-button
+{
+    background-image: url("../Images/Icons/panel-close.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: transparent;
+    display: inline-block;
+    overflow: hidden;
+    width: 16px;
+    text-indent: -9999px;
+}
+
+/* END: Header Buttons ----------------- */
+
+
+/* BEGIN: Large Shell ---------------*/
+
+.large-shell-left,
+.large-shell-right,
+.large-shell-bottom
+{
+   overflow: auto;
+}
+
+.large-shell-main,
+.large-shell-left,
+.large-shell-right,
+.large-shell-center
+{
+    position: absolute;
+}
+
+.large-shell-main,
+.large-shell-center
+{
+    left: 0px;
+    top: 51px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.large-shell-center
+{
+    z-index: 200;
+}
+
+.large-shell-bottom
+{
+    bottom: 0px;
+    z-index: 100;
+}
+
+.large-shell-center
+{
+    top: 0px;
+    right: 0px;
+}
+
+.large-shell-left
+{
+    margin-left: -1px;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+}
+
+.large-shell-tab
+{
+    margin-left: -1px;
+}
+
+.large-shell-tab a
+{
+    display: block;
+    border: 1px solid #999999;
+    border-top: none;
+    border-left: none;
+    border-bottom-right-radius: 3px;
+    -moz-border-bottom-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    width: 38px;
+    height: 38px;
+    opacity: 0.65;
+    filter: alpha(opacity = 65);
+}
+
+.panel-closed
+{
+    overflow: hidden;
+    padding: 0;
+    width: 0;
+}
+
+.tab-open
+{
+    background: #FFFFFF url("../Images/Icons/chevron-left-16.png") no-repeat center center;
+}
+
+.tab-closed
+{
+    background: #FFFFFF url("../Images/Icons/chevron-right-16.png") no-repeat center center;
+}
+
+/* END: Large Shell ---------------*/
+
+
+/* BEGIN: Modal Window ---------------*/
+
+.modal.active,
+.modal-overlay.active
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.modal.inactive,
+.modal-overlay.inactive
+{
+    display: none;
+}
+
+.modal-overlay.active
+{
+    background: black !important;
+    opacity: 0.75;
+    filter: alpha(opacity=75); /* For IE8 and earlier */
+    z-index: 200;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-container
+{
+    background: #FFFFFF;
+    border: 1px solid #666666;
+    border-radius: 4px;
+    -webkit-border-radius: 4px; /* IOS */
+    position: absolute;
+    min-width: 300px;
+    z-index: 250;
+}
+
+/* END: Modal Window ---------------*/
+
+
+/* BEGIN: Layer List Default Styling --------- */
+
+.layerlist
+{
+	font-size: 1em;
+}
+
+.layerlist a
+{
+	color: #000000;
+}
+
+.layer-info
+{
+	border-bottom: 1px solid #EEEEEE;
+	-webkit-tap-highlight-color: rgba(26,131,236,1);
+}
+
+.parent-layer
+{
+	font-weight: bold;
+}
+
+/* END: Layer List Default Styling --------- */
+
+
+/* BEGIN: List Menu ---------------*/
+
+.list-menu-item
+{
+    padding: 8px;
+}
+
+.list-menu-item:after
+{
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.list-menu-icon
+{
+    float: left;
+}
+
+.list-menu-details
+{
+    display: block;
+    margin: 4px 0 4px 0;
+    word-wrap: break-word;
+    workd-break: break-all;
+}
+
+.list-menu-details span
+{
+    display: block;
+}
+
+.list-menu-details .list-menu-desc span
+{
+    display: inline;
+}
+
+.has-icon .list-menu-details
+{
+    margin-left: 32px;
+}
+
+/* END: List Menu ---------------*/
+
+
+/* BEGIN: Map Callout ---------------*/
+
+.map-callout-pointer-image
+{
+    background-image: url("../../Resources/Images/map-callout-pointer.png");
+}
+
+/* BEGIN: Map Callout ---------------*/
+
+
+/* BEGIN: Paging Controls ---------------*/
+
+.paging-buttons a
+{
+    background-image: url("../../Resources/Images/paging-control-sprite-24.png");
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+/* BEGIN: Paging Controls ---------------*/
+
+
+/* BEGIN: Results ---------------*/
+
+.results-list .list-menu-icon
+{
+    width: 32px;
+    height: 32px;
+}
+
+.results-list .list-menu-details
+{
+    margin-left: 36px;
+}
+
+/* END: Results ---------------*/
+
+
+/* BEGIN: Status Indicator ---------------*/
+
+.status-indicator
+{
+    text-align: center;
+}
+
+.status-msg
+{
+    text-align: left;
+}
+
+.status-indicator img,
+.status-indicator span
+{
+    display: block;
+}
+
+.status-msg span
+{
+    margin: 0 10px;
+}
+
+.status-close
+{
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url("../../Resources/Images/Icons/panel-close.png") center center no-repeat;
+    opacity: 0.5
+}
+
+.status-close:hover
+{
+    opacity: 1;  
+}
+
+/* END: Status Indicator ---------------*/
+
+
+/* BEGIN: Common Overrides ---------------*/
+
+.tooltip 
+{
+    display: none;
+}
+
+/* END: Common Overrides ---------------*/
+
+
+/* BEGIN: Button Iconography ---------------*/
+
+.geometry-type-mappoint 
+{
+    background-image: url(../../Resources/Images/Icons/draw-point-24.png);
+}
+
+.geometry-type-multipoint 
+{
+    background-image: url(../../Resources/Images/Icons/draw-multipoint-24.png);
+}
+
+.geometry-type-polyline 
+{
+    background-image: url(../../Resources/Images/Icons/draw-polyline-24.png); 
+}
+
+.geometry-type-polygon 
+{
+    background-image: url(../../Resources/Images/Icons/draw-polygon-24.png);  
+}
+
+.geometry-type-freehandpolyline 
+{
+    background-image: url(../../Resources/Images/Icons/draw-freehand-24.png);  
+}
+
+.geometry-type-extent 
+{
+    background-image: url(../../Resources/Images/Icons/draw-rectangle-24.png);   
+}
+
+.geometry-type-currentextent 
+{
+    background-image: url(../../Resources/Images/Icons/draw-extent-24.png);   
+}
+
+.zoom-in
+{
+    background-image: url("../../Resources/Images/Icons/map-nav-zoom-in-16.png");
+}
+
+.zoom-out
+{
+    background-image: url("../../Resources/Images/Icons/map-nav-zoom-out-16.png");
+}
+
+.geolocate
+{
+    background-image: url("../../Resources/Images/Icons/geolocate.png");
+}
+
+/* END: Button Iconography ---------------*/

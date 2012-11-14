@@ -1,0 +1,28 @@
+﻿/* BEGIN: I Want To Menu ---------------*/
+
+.wanttomenu-list .view.active
+{
+    opacity: 1; 
+}
+
+.wanttomenu-list .view.inactive
+{
+    opacity: 0;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+
+.iwtm-btn-active .wanttomenu-button a
+{
+    height: 32px;
+    background: #FFFFFF;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    color: #333333;
+    text-shadow: none;
+    filter: none;
+}
+
+/* END: I Want To Menu ---------------*/

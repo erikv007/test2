@@ -1,0 +1,834 @@
+﻿/* BEGIN: CSS Resets -----------------*/
+
+body,div,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { margin:0; padding:0; }
+table { border-collapse:collapse; border-spacing:0; }
+fieldset,img { border:0; }
+
+/* END: CSS Resets -----------------*/
+
+
+/* BEGIN: Global Application Styling ---------------*/
+
+html
+{
+	-webkit-text-size-adjust: none; /* IOS - Retain font size when switching modes */
+}
+
+body
+{
+    background: #FFFFFF;
+    color: #333333;
+}
+
+a, a:visited
+{
+    color: Blue;
+    text-decoration: underline;
+}
+
+input,
+select,
+textarea
+{
+    font-size: 1em;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+/* END: Global Application Styling ---------------*/
+
+
+/* BEGIN: Application Regions & Views ---------------*/
+
+.region,
+.screen-region
+{
+    width: 100%;
+    height: 100%;
+}
+
+.screen-region
+{
+    position: absolute;
+    top: 50px;
+}
+
+.tool-region
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 200;
+}
+
+/* END: Application Regions & Views ---------------*/
+
+
+/* BEGIN: Form Items ---------------*/
+
+.form-item .group-box
+{
+    width: 100%;
+}
+
+.group-box-description
+{
+    margin: 5px 0px 5px 0px;
+}
+
+.form-item .group-box-inner fieldset
+{
+   border: 1px solid #CCCCCC;
+   padding: 0px 10px 10px 10px;
+}
+
+.form-item .group-box-inner legend
+{
+    font-weight: bold;
+    padding: 0px;
+}
+
+/* END: Form Items ---------------*/
+
+
+/* BEGIN: Module Customization ---------------*/
+
+.results-container-header,
+.workflow-list-no-workflows
+{
+   padding: 0.95em;
+   position: relative;
+   border-bottom: 1px solid #CCCCCC;
+}
+
+.workflow-container .form-title,
+.results-container-header h2,
+.workflow-list-no-workflows h2
+{
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.results-container
+{
+    height: 100%;
+}
+
+/* END: Module Customization ---------------*/
+
+.map
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.map-top-left
+{
+    display: inline-block;
+    float: left;
+    z-index: 100;
+    width: auto;
+    margin: 8px 0px;
+    position: relative;
+}
+
+.map-top-right
+{
+    position: absolute;
+    display: inline;
+    z-index: 100;
+    width: auto;
+    height: auto;
+    right: 0px;
+    margin: 8px 8px 0px 0px;
+}
+
+.map-bottom-center
+{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.map-bottom-center .view.active
+{
+    display: inline-block;
+    position: relative;
+    z-index: 102;
+}
+
+/* END: Map & Map Regions ---------------*/
+
+
+/* BEGIN: Prompt & Alerts ---------------*/
+
+.alert-body,
+.prompt-body
+{
+    margin-bottom: 1em;
+    overflow: auto;
+}
+
+.prompt .text-area textarea
+{
+    width: 100%;
+}
+
+.alert,
+.prompt
+{
+    margin: 1em;
+}
+
+.alert-body
+.prompt-body
+{
+    margin-bottom: 1em;
+}
+
+/* END: Prompt & Alerts ---------------*/
+
+
+/* BEGIN: Toolbar View & Toolbar Buttons ---------------*/
+
+.toolbar
+{ 
+    height: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    background: #333333;
+    background: linear-gradient(top, #555555 0%,#333333 100%); /* W3C */
+    background: -moz-linear-gradient(top, #555555 0%, #333333 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#555555), color-stop(100%,#333333)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #555555 0%,#333333 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #555555 0%,#333333 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #555555 0%,#333333 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555555', endColorstr='#333333',GradientType=0 ); /* IE6-9 */
+}
+
+.tab-container div
+{
+    position: relative;
+    display: inline-block;
+    height: 50px;
+    color: #FFFFFF;
+}
+
+.toolbar img
+{
+    opacity: 0.75;
+    vertical-align: middle;
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.tb-view-active
+{
+    background: #555555;
+}
+
+.tb-view-active img,
+.tb-view-active span
+{
+   opacity: 1; 
+}
+
+.toolbar .highlight
+{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+}
+
+.tb-view-active .highlight
+{
+    background-color: #00b6ec;
+}
+
+.toolbar div.IWantToMenuView
+{
+    padding: 0 8px;
+    vertical-align: middle;
+    width: auto;
+    background: #CC6A00;
+    background: linear-gradient(top, #FFA249 0%,#EE6A00 100%);
+    background: -moz-linear-gradient(top, #FFA249 0%, #EE6A00 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFA249), color-stop(100%,#EE6A00));
+    background: -webkit-linear-gradient(top, #FFA249 0%,#EE6A00 100%);
+    background: -o-linear-gradient(top, #FFA249 0%,#EE6A00 100%);
+    background: -ms-linear-gradient(top, #FFA249 0%,#EE6A00 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFA249', endColorstr='#EE6A00',GradientType=0 ); /* IE lte 9 */
+}
+
+.toolbar .IWantToMenuView span
+{
+    display: inline !important;
+    line-height: 50px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+/* END: Toolbar View & Toolbar Buttons ---------------*/
+
+
+/* BEGIN: Validation ---------------*/
+
+.form-item-required
+{
+    color: #333333;
+    font-weight: normal;
+}
+
+/* END: Validation  ---------------*/
+
+
+/* BEGIN: Authentication ---------------*/
+
+.authentication-dialog
+{
+    margin: 0.8em;
+}
+
+.authentication-dialog .form-label
+{
+    display: block;
+    margin-bottom: 2px;
+    text-align: left;
+}
+
+.authentication-dialog input
+{
+    width: 100%;
+}
+
+/* END: Authentication ---------------*/
+
+
+/* BEGIN: Layerlist --------- */ 
+
+.layerlist
+{
+	font-size: 1.2em;
+}
+
+.layerlist ul
+{
+    margin: 0;
+    padding: 0;
+}
+
+.layerlist a
+{
+	color: #000000;
+    -webkit-tap-highlight-color: rgba(0,182,236,0.75);
+}
+
+.layerlist .layer-disabled
+{
+    color: #999999;
+}
+
+.layerlist .layer-enabled
+{
+    color: #000000;
+}
+
+.layer-info
+{
+	border-bottom: 1px solid #CCCCCC;
+	padding: 10px;
+}
+	
+.layerlist input[type=checkbox]
+{
+	width: 24px;
+	height: 24px;
+	border-radius: 2px;
+	border: 2px solid #999999;
+	box-shadow: 1px 1px 2px #EEEEEE inset;
+	-webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0,182,236,0.75);
+}
+	
+.layerlist input[type=checkbox]:checked
+{
+	background: url(../Images/Icons/check-16.png) center center no-repeat;
+}
+
+.layerlist input[type=checkbox]:disabled
+{
+	opacity: 0.4;
+}
+	
+.layer-info,
+.layer-disabled .layer-info,
+.layer-disabled .layer-info:active
+{
+	padding: 8px;
+}
+
+.layer-info img,
+.layer-info .display-name
+{
+    margin-left: 4px;
+}
+
+.parent-layer
+{
+	font-weight: bold;
+}
+									
+/* END: Layerlist ------------------- */
+
+
+/* BEGIN: List Menu ---------------*/
+
+.list-menu
+{
+    width: 100%;
+}
+
+.list-menu-item
+{
+   	padding: 8px;
+   	border-top: 1px solid #FFFFFF;
+   	border-bottom: 1px solid #DDDDDD;
+    -webkit-tap-highlight-color: rgba(0,182,236,0.75);
+}
+
+.list-menu .list-menu-item:nth-child(odd)
+{
+    background-color: #FAFAFA;
+}
+
+.list-menu div.list-menu-item:last-child
+{
+    border-bottom: none;
+}
+
+.list-menu-name
+{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.list-menu-desc
+{
+    color: #666666;
+    line-height: 1.1em;
+}
+
+.list-submenu
+{
+    margin: 8px;
+    background: #FFFFFF;
+    border: 1px solid #999999;
+    border-radius: 6px;
+}
+
+a.list-menu-item
+{
+    display: block;
+    color: #333333;
+    text-decoration: none;
+}
+
+.list-menu-closed
+{
+    background: url("../../Resources/Images/Icons/expander-closed-24.png") right center no-repeat;
+}
+
+.list-menu-open
+{
+    background: url("../../Resources/Images/Icons/expander-open-24.png") right center no-repeat;
+}
+
+/* END: List Menu ---------------*/
+
+
+/* BEGIN: Loading Indicator ---------------*/
+
+.loading-container
+{
+    text-align: center;
+    padding: 0.5em;
+}
+
+.loading-img,
+.loading-msg
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.loading-img
+{
+    width: 24px;
+    height: 24px;
+    background-image: url(../Images/loader-small.gif);
+}
+
+/* END: Loading Indicator ---------------*/
+
+
+/* BEGIN: Map Tips ---------------*/
+
+.map-callout
+{
+    background: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px #444444;
+    -webkit-box-shadow: 2px 2px 2px #444444;
+    color: #333333;
+}
+
+.map-callout-header h2
+{
+    font-size: 1.1em;
+}
+
+/* END: Map Tips ---------------*/
+
+
+/* BEGIN: Container View Components ---------------*/
+
+.panel-header
+{
+    background: #EEEEEE;
+    border-bottom: 1px solid #CCCCCC;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.panel-header h2
+{
+    font-size: 1.2em;
+    line-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.panel-title img
+{
+    vertical-align: middle;
+    margin-bottom: 3px;
+}
+
+.panel-header .button
+{
+    font-weight: normal;
+    position: absolute;
+    left: 8px;
+    top: 12px;
+}
+
+.panel-header .button.bound-visible + h2
+{
+    margin: 0 80px 0 80px;
+}
+
+.panel-header-button
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 55px;
+    width: 32px;
+    text-align: center;
+}
+
+.panel-notification,
+.panel-group-contents
+{
+    margin: 8px;
+}
+
+.panel-notification
+{
+    font-weight: bold;
+}
+
+.panel-group h3
+{
+    padding: .5em;
+    vertical-align: baseline;
+    background-color: #DDDDDD;
+    border-bottom: 1px solid #CCCCCC;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* END: Container View Components ---------------*/
+
+
+/* BEGIN: Form Items ---------------*/
+
+.form-button-container
+{
+    padding-top: .5em;
+}
+
+.form-button-container .button
+{
+    margin-left: .2em;
+}
+
+.form-validation-message
+{
+    margin: 0.5em 0;
+    padding: 0.5em;
+    background: #DD0000;
+    border: 1px solid #FF0000;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    color: #FFFFFF;
+}
+
+.auto-complete-dropdown
+{
+    max-height: 200px;
+    background: #FFFFFF;
+    border: 1px solid #999999;
+}
+
+.auto-complete .list-menu li
+{
+    padding: .25em;
+}
+
+/* END: Form Items ---------------*/
+
+
+/* BEGIN: Results ---------------*/
+
+.paging-control
+{
+    border-top: 1px solid #CCCCCC;
+    overflow: hidden;
+    padding: 8px;
+}
+
+.paging-result-info
+{
+    float: left;
+    margin-top: 4px;
+}
+
+.paging-buttons
+{
+    float: right;
+}
+
+.paging-buttons a,
+.paging-buttons .paging-buttons-info
+{
+    background-color: #EEEEEE;
+    border: 1px solid #999999;
+    box-shadow: 1px 1px 1px #FFFFFF inset;
+    display: inline-block;
+    float: left;
+    margin: 0 -1px;
+}
+
+.paging-buttons a
+{
+    width: 24px;
+    height: 24px;
+}
+
+.paging-buttons .paging-buttons-info
+{   
+    height: 24px;
+    line-height: 24px;
+    padding: 0 8px;
+}
+
+.paging-buttons a:first-child
+{
+    border-radius: 4px 0 0 4px;
+}
+
+.paging-buttons a:last-child
+{
+    border-radius: 0 4px 4px 0;
+    margin-right: 0;
+}
+
+.paging-control .first
+{
+    background-position: center 0;
+}
+
+.paging-control .prev
+{
+    background-position: center -24px;
+}
+
+.paging-control .next
+{
+    background-position: center -48px;
+}
+
+.paging-control .last
+{
+    background-position: center -72px;
+}
+
+.no-item,
+.no-results
+{
+    padding: 8px;
+}
+
+.no-results p
+{
+    margin-bottom: .5em;
+}
+
+/* END: Results ---------------*/
+
+
+/* BEGIN: Search Module ---------------*/
+
+.global-search
+{
+    background: #FFFFFF;
+    border: 1px solid #999999;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px #CCCCCC inset;
+    margin: .5em;
+}
+
+/* END: Search Module ---------------*/
+
+
+/* BEGIN: Status Indicator ---------------*/
+
+.status-window
+{
+    position: relative;
+    margin: 16px;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 1px solid #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px #444444;
+    -webkit-box-shadow: 2px 2px 2px #444444;
+    font-weight: bold;
+}
+
+.status-close
+{
+    -webkit-tap-highlight-color: rgba(0,182,236,0.75);
+}
+
+/* END: Status Indicator ---------------*/
+
+
+/* BEGIN: Workflow ---------------*/
+
+.workflow-form p.desc
+{
+    width: auto;
+}
+
+.workflow-status-msg
+{
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+}
+
+.workflow-status-msg.invalid
+{
+    background: #DD0000;
+    border: 1px solid #FF0000;
+    color: #FFFFFF;  
+}
+
+/* END: Workflow ---------------*/
+
+
+/* BEGIN: Zoom Controls ---------------*/
+
+.zoom-control-btn
+{
+    background-color: #FFFFFF;
+    border: 1px solid #999999;
+    border-radius: 2px;
+    margin: 5px 0 0 4px;
+    opacity: 0.65;
+}
+
+.zoom-control-btn.zoom-in
+{
+    border-radius: 2px 2px 0 0;
+}
+
+.zoom-control-btn.zoom-out
+{
+    margin-top: -1px;
+    border-radius: 0 0 2px 2px;
+}
+
+/* END: Zoom Control Buttons ---------------*/
+
+
+/* BEGIN: View Containers ---------------*/
+
+.view-container-view .view.active
+{
+    -webkit-transition: opacity 250ms ease-in 10ms; /* property duration timing-function delay */
+    -moz-transition:  opacity 250ms ease-in 10ms;
+    -o-transition:  opacity 250ms ease-in 10ms;
+    transition:  opacity 250ms ease-in 10ms;
+}
+
+.view-container-view .view.inactive
+{
+    opacity: 0;
+}
+
+/* END: View Containers ---------------*/
+
+
+/* BEGIN: Resolution Dependant Styling ---------------*/
+
+@media only screen and (max-width: 380x)
+{
+   .paging-result-info
+    {
+        margin: 0;
+    }
+    
+    .paging-buttons
+    {
+        float: left;
+        margin-top: 6px;
+        width: 100%;
+    }
+    
+    .paging-buttons a
+    {
+        width: 15%;
+    }
+    
+    .paging-buttons .paging-buttons-info
+    {
+        width: 39%;
+        text-align: center;
+        vertical-align: bottom;
+        padding: 0;
+    }
+    
+}
+
+/* BEGIN: Resolution Dependant Styling ---------------*/
